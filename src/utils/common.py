@@ -22,3 +22,10 @@ def save_json(path: str, data: dict) -> None:
         json.dump(data, f, indent=4)
 
     logging.info(f"json file saved at: {path}")
+
+def read_json(path: str) -> dict:
+    with open(path) as f:
+        content = json.load(f)
+    logging.info(f"json file: {path} loaded successfully")
+    return content
+

@@ -1,7 +1,11 @@
 # It contains all the configs required in the project
 
+
+
 artifacts:
   ARTIFACTS_DIR: artifacts
+  RAW_LOCAL_DIR: raw_local_dir
+  RAW_LOCAL_FILE: data.csv 
   TRAINED_MODEL_DIR: model
   BASE_MODEL_DIR: base_model
   BASE_MODEL_NAME: base_model.h5
@@ -18,3 +22,8 @@ source_download_dirs:
 local_data_dirs:
   - path_to_local_data_1
   - path_to_local_data_2
+
+azure:
+  subscription_id: 2ff60c86-4824-4a6a-bb33-beb7c5b60b23
+  resource_group: akashb-rg
+  workspace_name: akashb-ws

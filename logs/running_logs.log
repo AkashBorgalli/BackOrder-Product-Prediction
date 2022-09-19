@@ -1,0 +1,48 @@
+[2022-09-19 19:28:23,663: INFO: stage_01_load_save]: 
+********************
+[2022-09-19 19:28:23,664: INFO: stage_01_load_save]: >>>>> stage Get Data started <<<<<
+[2022-09-19 19:28:23,683: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-19 19:28:23,684: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-19 19:28:23,684: INFO: common]: json file: config.json loaded successfully
+[2022-09-19 19:29:42,184: INFO: stage_01_load_save]: >>>>> stage Get Data completed!<<<<<
+
+[2022-09-19 19:41:35,825: INFO: stage_01_load_save]: 
+********************
+[2022-09-19 19:41:35,825: INFO: stage_01_load_save]: >>>>> stage Get Data started <<<<<
+[2022-09-19 19:41:35,839: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-19 19:41:35,841: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-19 19:41:35,841: INFO: common]: json file: config.json loaded successfully
+[2022-09-19 19:56:00,863: INFO: stage_01_load_save]: 
+********************
+[2022-09-19 19:56:00,863: INFO: stage_01_load_save]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-19 19:56:00,866: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-19 19:56:00,867: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-19 20:02:23,819: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-19 20:03:07,281: INFO: stage_01_load_save]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-19 20:03:07,485: INFO: stage_01_load_save]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-19 20:17:59,819: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-19 20:17:59,819: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-19 20:17:59,820: ERROR: stage_01_load_n_save_data]: main() missing 1 required positional argument: 'json_path'
+Traceback (most recent call last):
+  File "src/stage_01_load_n_save_data.py", line 49, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+TypeError: main() missing 1 required positional argument: 'json_path'
+[2022-09-19 20:19:04,778: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-19 20:19:04,778: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-19 20:19:04,778: ERROR: stage_01_load_n_save_data]: main() missing 1 required positional argument: 'json_path'
+Traceback (most recent call last):
+  File "src/stage_01_load_n_save_data.py", line 49, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+TypeError: main() missing 1 required positional argument: 'json_path'
+[2022-09-19 20:24:23,176: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-19 20:24:23,176: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-19 20:24:23,194: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-19 20:24:23,196: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-19 20:31:08,179: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-19 20:31:26,263: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-19 20:31:26,317: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
