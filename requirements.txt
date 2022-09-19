@@ -4,6 +4,33 @@ dvc
 pandas
 numpy
 PyYAML
+jupyter
+seaborn
+ipykernel
+scikit-learn
+azureml-defaults
+azureml-mlflow
+azureml-core
+azureml-sdk
+azureml-widgets
+azureml-dataprep
+azureml-dataprep-native
+azureml-dataprep-rslex
+azureml-dataset-runtime
+azureml-telemetry
+azureml-pipeline
+azureml-interpret
+applicationinsights
+imbalanced-learn==0.7.0
+imblearn
+lightgbm
+catboost
+matplotlib-inline
+papermill
+pyqt5-tools
+pillow==8.0.0
+pyarrow
 
 ### local packages -
-# -e . # << uncomment this to install from setup.py
+-e . # << uncomment this to install from setup.py
+
