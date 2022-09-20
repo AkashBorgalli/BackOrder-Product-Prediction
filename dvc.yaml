@@ -7,3 +7,11 @@ stages:
     - src/utils/common.py
     outs:
     - artifacts/raw_local_dir/data.csv
+  data_preprocessing:
+    cmd: python src/stage_01_load_n_save_data.py
+    deps:
+    - src/stage_01_load_n_save_data.py
+    - src/utils/common.py
+    outs:
+    - artifacts/raw_local_dir/data.csv
+
