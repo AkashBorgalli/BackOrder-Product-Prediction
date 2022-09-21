@@ -46,16 +46,16 @@ def main(config_path, params_path):
     logging.info(f"fetched the data from : {raw_local_filepath}")
     df = pd.read_csv(raw_local_filepath)
     print(df.shape)
+    row_count = (len(df))
+    run.log('raw_rows', row_count)
     # Drop last row
-    df.drop(df.tail(1).index,inplace=True)
+    df.drop(index = 1687860,inplace=True)
     logging.info("Dropped last row")
-    logging.info(df.head(10))
-    print(df)
     # Converted columns to 0's and 1's
     Cols_for_str_to_bool = ['potential_issue', 'deck_risk', 'oe_constraint', 'ppap_risk',
                         'stop_auto_buy', 'rev_stop', 'went_on_backorder']
     for col_name in Cols_for_str_to_bool:
-        df[col_name] = df[col_name].map({'No':0, 'Yes':1})
+        df[col_name] = df[col_name].map({False:0, True:1})
         df[col_name] = df[col_name].astype(int)
     logging.info("Converted columns to 0's and 1's")
     # Removing the non imp features from the dataset
@@ -71,7 +71,8 @@ def main(config_path, params_path):
     logging.info("Splitting the dataset into X and y")
     # filling the missing values
     lr  = LinearRegression()
-    imp = IterativeImputer(estimator=lr,max_iter=imputer['max_iter'],tol=imputer['tol'], random_state=imputer['random_state'],imputation_order=imputer['imputation_order'],verbose=imputer['verbose'])
+    print('max_iter',type(imputer['max_iter']),'tol',type(imputer['tol']),'random',type(imputer['random_state']),'impute_order',type(imputer['imputation_order']),'verbose',imputer['verbose'])
+    imp = IterativeImputer(estimator=lr,max_iter=imputer['max_iter'],tol=float(imputer['tol']), random_state=imputer['random_state'],imputation_order=imputer['imputation_order'],verbose=imputer['verbose'])
     imp.fit(X)
     X = imp.transform(X)
     logging.info("Filled missing values for lead_time, perf_6_month_avg and perf_12_month_avg columns")
@@ -82,11 +83,14 @@ def main(config_path, params_path):
         new_X_df[i] = np.cbrt(new_X_df[i])
     logging.info("Applying cuberoot for normally distributed data")
     # Handling imbalance data
-    SMOTEENN = SMOTEENN(n_jobs=-1)
+    smoteenn = SMOTEENN(n_jobs=-1)
     print('Original dataset shape %s' % Counter(y))
-    X_res, y_res = SMOTEENN.fit_resample(new_X_df, y)
+    X_res, y_res = smoteenn.fit_resample(new_X_df, y)
     print('After undersample dataset shape %s' % Counter(y_res))
-    run.log('After performing smooteen',Counter(y_res))
+    label_counts = Counter(y_res)
+    run.log('label_count of 0',label_counts[0])
+    run.log('label_count of 1',label_counts[1])
+
     result = pd.concat([X_res,y_res],axis = 1)
     logging.info("Applied Smoteen to handle imbalanceness of data")
     result.to_csv(prep_local_filepath,index=False)
