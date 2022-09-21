@@ -27,11 +27,11 @@ def main(config_path, params_path):
     artifacts = config["artifacts"]
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
     raw_local_dir = artifacts["RAW_LOCAL_DIR"]
-    raw_local_file = artifacts["RAW_LOCAL_FILE"]
+    prep_local_file = artifacts["PREP_FILE"]
     raw_local_dir_path = os.path.join(artifacts_dir, raw_local_dir)
-    raw_local_filepath = os.path.join(raw_local_dir_path, raw_local_file)
+    prep_local_filepath = os.path.join(raw_local_dir_path, prep_local_file)
 
-    df = pd.read_csv(raw_local_filepath)
+    df = pd.read_csv(prep_local_filepath)
 
     test_size = params["base"]["test_size"]
     random_state = params["base"]["random_state"]
@@ -46,14 +46,18 @@ def main(config_path, params_path):
     split_data_dir_path = os.path.join(artifacts_dir, split_data_dir)
     create_directories([split_data_dir_path])
 
-    train_data_path = os.path.join(split_data_dir_path, artifacts["TRAIN"])
-    test_data_path = os.path.join(split_data_dir_path, artifacts["TEST"])
+    train_data_path = os.path.join(split_data_dir_path, artifacts["X_TRAIN"])
+
+    test_data_path = os.path.join(split_data_dir_path, artifacts["X_TEST"])
+
+    y_train_data_path = os.path.join(split_data_dir_path, artifacts["Y_TRAIN"])
+    y_test_data_path = os.path.join(split_data_dir_path, artifacts["Y_TEST"])
 
     for data, data_path in (X_train, train_data_path), (X_test, test_data_path):
         data.to_csv(data_path, sep=",", index=False)
         logging.info(f"data is saved at: {data_path} for X data")
 
-    for data, data_path in (y_train, train_data_path), (y_test, test_data_path):
+    for data, data_path in (y_train, y_train_data_path), (y_test, y_test_data_path):
         data.to_csv(data_path, sep=",", index=False)
         logging.info(f"data is saved at: {data_path} for y data")
 

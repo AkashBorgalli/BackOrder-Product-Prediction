@@ -8,8 +8,10 @@ artifacts:
   RAW_LOCAL_FILE: data.csv 
   PREP_FILE: furnished_data.csv
   SPLIT_DATA_DIR: split_data_dir
-  TRAIN: train.csv
-  TEST: test.csv
+  X_TRAIN: X_train.csv
+  X_TEST: X_test.csv
+  Y_TRAIN: y_train.csv
+  Y_TEST: y_test.csv
   TRAINED_MODEL_DIR: model
   TRAINED_MODEL_NAME: model.pkl
   

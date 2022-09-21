@@ -42,6 +42,8 @@ def main(config_path, params_path):
     prep_local_filepath = os.path.join(raw_local_dir_path, prep_file)
     ws = Workspace.from_config()
     experiment = Experiment(workspace=ws, name="backorder-product")
+    run = experiment.start_logging()
+    print("Starting experiment:", experiment.name)
     run = Run.get_context()
     logging.info(f"fetched the data from : {raw_local_filepath}")
     df = pd.read_csv(raw_local_filepath)
@@ -83,7 +85,7 @@ def main(config_path, params_path):
         new_X_df[i] = np.cbrt(new_X_df[i])
     logging.info("Applying cuberoot for normally distributed data")
     # Handling imbalance data
-    smoteenn = SMOTEENN(n_jobs=-1)
+    smoteenn = SMOTEENN(n_jobs=params['base']['n_jobs'])
     print('Original dataset shape %s' % Counter(y))
     X_res, y_res = smoteenn.fit_resample(new_X_df, y)
     print('After undersample dataset shape %s' % Counter(y_res))
