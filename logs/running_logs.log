@@ -46,3 +46,36 @@ TypeError: main() missing 1 required positional argument: 'json_path'
 [2022-09-19 20:31:26,263: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
 [2022-09-19 20:31:26,317: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
 
+[2022-09-21 14:36:54,120: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-21 14:36:54,120: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-21 14:36:54,141: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-21 14:36:54,151: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-21 14:36:54,176: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-21 14:36:59,769: INFO: clientbase]: Created a worker pool for first use
+[2022-09-21 14:37:05,623: INFO: run]: Could not load the run context. Logging offline
+[2022-09-21 14:37:05,623: INFO: stage_02_data_preprocessing]: fetched the data from : artifacts\raw_local_dir\data.csv
+[2022-09-21 14:37:12,560: INFO: stage_02_data_preprocessing]: Dropped last row
+[2022-09-21 14:37:12,946: ERROR: stage_02_data_preprocessing]: Cannot convert non-finite values (NA or inf) to integer
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 107, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 56, in main
+    df[col_name] = df[col_name].astype(int)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\generic.py", line 5815, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\internals\managers.py", line 418, in astype
+    return self.apply("astype", dtype=dtype, copy=copy, errors=errors)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\internals\managers.py", line 327, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\internals\blocks.py", line 591, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\dtypes\cast.py", line 1309, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\dtypes\cast.py", line 1257, in astype_array
+    values = astype_nansafe(values, dtype, copy=copy)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\dtypes\cast.py", line 1168, in astype_nansafe
+    return astype_float_to_int_nansafe(arr, dtype, copy)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\dtypes\cast.py", line 1214, in astype_float_to_int_nansafe
+    "Cannot convert non-finite values (NA or inf) to integer"
+pandas.errors.IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer

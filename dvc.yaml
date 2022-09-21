@@ -8,10 +8,10 @@ stages:
     outs:
     - artifacts/raw_local_dir/data.csv
   data_preprocessing:
-    cmd: python src/stage_01_load_n_save_data.py
+    cmd: python src/stage_02_data_preprocessing.py
     deps:
     - src/stage_01_load_n_save_data.py
     - src/utils/common.py
     outs:
-    - artifacts/raw_local_dir/data.csv
+    - artifacts/raw_local_dir/furnished_data.csv
 

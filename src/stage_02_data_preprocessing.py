@@ -14,6 +14,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.impute import IterativeImputer
 from azureml.core import Workspace, Dataset, Run
 from src.utils.common import read_yaml, create_directories
+from azureml.core import Experiment
 
 
 STAGE = "Data Preprocessing" ## <<< change stage name 
@@ -33,44 +34,64 @@ def main(config_path, params_path):
     artifacts = config["artifacts"]
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
     raw_local_dir = artifacts["RAW_LOCAL_DIR"]
+    raw_local_file = artifacts["RAW_LOCAL_FILE"]
     prep_file = artifacts["PREP_FILE"]
+    imputer = params['imputer']
     raw_local_dir_path = os.path.join(artifacts_dir, raw_local_dir)
-    raw_local_filepath = os.path.join(raw_local_dir_path, prep_file)
-
+    raw_local_filepath = os.path.join(raw_local_dir_path, raw_local_file)
+    prep_local_filepath = os.path.join(raw_local_dir_path, prep_file)
+    ws = Workspace.from_config()
+    experiment = Experiment(workspace=ws, name="backorder-product")
+    run = Run.get_context()
+    logging.info(f"fetched the data from : {raw_local_filepath}")
     df = pd.read_csv(raw_local_filepath)
+    print(df.shape)
     # Drop last row
     df.drop(df.tail(1).index,inplace=True)
+    logging.info("Dropped last row")
+    logging.info(df.head(10))
+    print(df)
     # Converted columns to 0's and 1's
     Cols_for_str_to_bool = ['potential_issue', 'deck_risk', 'oe_constraint', 'ppap_risk',
                         'stop_auto_buy', 'rev_stop', 'went_on_backorder']
     for col_name in Cols_for_str_to_bool:
         df[col_name] = df[col_name].map({'No':0, 'Yes':1})
         df[col_name] = df[col_name].astype(int)
+    logging.info("Converted columns to 0's and 1's")
     # Removing the non imp features from the dataset
     df.drop(['sku','forecast_3_month','forecast_9_month','sales_9_month','stop_auto_buy','ppap_risk','deck_risk'], axis = 1,inplace=True)
-    # Replacing nwith nan values
+    logging.info("Dropped non imp features from the dataset")
+    # Replacing with nan values
     df['perf_6_month_avg'] = df['perf_6_month_avg'].replace(to_replace=-99.00,value=np.nan)
     df['perf_12_month_avg'] = df['perf_12_month_avg'].replace(to_replace=-99.00,value=np.nan)
+    logging.info("Replacing perf_6_month_avg and perf_12_month_avg with nan values")
     # Split the data
     X = df.drop(['went_on_backorder'], axis =1)
     y = df['went_on_backorder']
+    logging.info("Splitting the dataset into X and y")
     # filling the missing values
     lr  = LinearRegression()
-    imp = IterativeImputer(estimator=lr,max_iter=10,tol=1e-10, random_state=0,imputation_order='roman',verbose=2)
+    imp = IterativeImputer(estimator=lr,max_iter=imputer['max_iter'],tol=imputer['tol'], random_state=imputer['random_state'],imputation_order=imputer['imputation_order'],verbose=imputer['verbose'])
     imp.fit(X)
     X = imp.transform(X)
+    logging.info("Filled missing values for lead_time, perf_6_month_avg and perf_12_month_avg columns")
     new_X_df =pd.DataFrame(X,columns=["national_inv","lead_time","in_transit_qty","forecast_6_month","sales_1_month","sales_3_month","sales_6_month","min_bank","potential_issue","pieces_past_due","perf_6_month_avg","perf_12_month_avg","local_bo_qty","oe_constraint","rev_stop"])
     # Applying cuberoot for normally distributed data
     skewed = ['national_inv','lead_time', 'in_transit_qty' , 'forecast_6_month', 'sales_1_month', 'sales_3_month', 'sales_6_month' , 'min_bank', 'pieces_past_due', 'perf_6_month_avg', 'perf_12_month_avg', 'local_bo_qty']
     for i in skewed:
         new_X_df[i] = np.cbrt(new_X_df[i])
+    logging.info("Applying cuberoot for normally distributed data")
     # Handling imbalance data
     SMOTEENN = SMOTEENN(n_jobs=-1)
     print('Original dataset shape %s' % Counter(y))
     X_res, y_res = SMOTEENN.fit_resample(new_X_df, y)
     print('After undersample dataset shape %s' % Counter(y_res))
+    run.log('After performing smooteen',Counter(y_res))
     result = pd.concat([X_res,y_res],axis = 1)
-    result.to_csv(raw_local_filepath,index=False)
+    logging.info("Applied Smoteen to handle imbalanceness of data")
+    result.to_csv(prep_local_filepath,index=False)
+    logging.info(f"Saved the prep data to: {prep_local_filepath}")
+    run.complete()
 
 
 

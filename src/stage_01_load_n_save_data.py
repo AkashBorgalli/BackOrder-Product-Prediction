@@ -37,6 +37,7 @@ def main(config_path, params_path):
     logging.info(f'raw data is saved at: {raw_local_file_path} successfully')
 
 
+
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default="configs/config.yaml")
