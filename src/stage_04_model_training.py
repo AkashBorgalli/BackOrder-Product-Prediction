@@ -8,8 +8,10 @@ import random
 import lightgbm as lgb
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
-import joblib
-from azureml.core import Workspace, Dataset, Run, Experiment , Model
+##import joblib
+import dill
+from sklearn.metrics import * 
+
 
 STAGE = "Model Training" ## <<< change stage name 
 
@@ -36,13 +38,14 @@ def main(config_path, params_path):
     x_test_data_path = os.path.join(split_data_dir_path, artifacts["X_TEST"])
     y_train_data_path = os.path.join(split_data_dir_path, artifacts["Y_TRAIN"])
     y_test_data_path = os.path.join(split_data_dir_path, artifacts["Y_TEST"])
-
+    print(f'X_train:{x_train_data_path},X_test:{x_test_data_path}')
 
     boosting_type=params['model_params']['Lightgbm']['boosting_type']
     objective=params['model_params']['Lightgbm']['objective']
     n_estimators=params['model_params']['Lightgbm']['n_estimators']
     n_jobs = params['base']['n_jobs']
     logging.info("loaded model parameters")
+    logging.info(f"boosting_type: {boosting_type},objective: {objective},n_estimators:{n_estimators},n_jobs:{n_jobs}")
 
     X_train = pd.read_csv(x_train_data_path)
     X_test = pd.read_csv(x_test_data_path)
@@ -75,8 +78,11 @@ def main(config_path, params_path):
     logging.info("Completed Model Training")
 
     ## Saving the model
-    joblib.dump(clf, model_file_path)
+    dill.dump(clf, open(model_file_path,'wb'))
     logging.info(f"model is trained and saved at: {model_file_path}")
+    lgb_mdl = dill.load(open(model_file_path,'rb'))
+    y_pred = lgb_mdl.predict(X_test)
+    print(classification_report(y_test,y_pred))
 
 
 if __name__ == '__main__':

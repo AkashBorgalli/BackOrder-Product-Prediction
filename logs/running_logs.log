@@ -758,3 +758,235 @@ KeyError: 'MODEL_DIR'
 [2022-09-22 15:30:01,025: INFO: stage_05_evaluate]: Run Completed
 [2022-09-22 15:30:01,025: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
 
+[2022-09-22 19:01:08,889: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 19:01:08,900: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 19:01:08,930: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 19:01:08,947: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 19:01:08,947: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 19:01:08,947: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 19:01:17,851: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 19:01:17,851: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 19:01:17,851: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 19:01:17,851: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 19:01:19,697: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 19:02:02,438: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 19:02:02,506: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 19:02:02,554: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 20:16:21,579: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 20:16:21,586: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 20:16:21,600: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 20:16:21,622: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 20:16:21,622: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 20:16:21,622: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 20:16:29,920: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 20:16:29,933: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 20:16:29,933: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 20:16:29,933: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 20:16:31,281: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 20:17:15,422: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 20:17:15,430: ERROR: stage_04_model_training]: file must have a 'write' attribute
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\pickle.py", line 404, in __init__
+    self._file_write = file.write
+AttributeError: 'str' object has no attribute 'write'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/stage_04_model_training.py", line 93, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_model_training.py", line 80, in main
+    dill.dump(clf, model_file_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\dill\_dill.py", line 336, in dump
+    Pickler(file, protocol, **_kwds).dump(obj)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\dill\_dill.py", line 566, in __init__
+    StockPickler.__init__(self, *args, **kwds)
+  File "D:\BackOrder-Product-Prediction\env\lib\pickle.py", line 406, in __init__
+    raise TypeError("file must have a 'write' attribute")
+TypeError: file must have a 'write' attribute
+[2022-09-22 20:18:36,476: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 20:18:36,476: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 20:18:36,496: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 20:18:36,501: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 20:18:36,501: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 20:18:36,501: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 20:19:02,035: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 20:19:02,057: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 20:19:02,059: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 20:19:02,059: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 20:19:05,984: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 20:20:00,526: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 20:20:00,919: ERROR: stage_04_model_training]: write
+Traceback (most recent call last):
+  File "src/stage_04_model_training.py", line 93, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_model_training.py", line 80, in main
+    dill.dump(clf, open(model_file_path,'rb'))
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\dill\_dill.py", line 336, in dump
+    Pickler(file, protocol, **_kwds).dump(obj)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\dill\_dill.py", line 620, in dump
+    StockPickler.dump(self, obj)
+  File "D:\BackOrder-Product-Prediction\env\lib\pickle.py", line 434, in dump
+    self.write(PROTO + pack("<B", self.proto))
+  File "D:\BackOrder-Product-Prediction\env\lib\pickle.py", line 229, in write
+    return self.file_write(data)
+io.UnsupportedOperation: write
+[2022-09-22 20:21:51,745: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 20:21:51,745: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 20:21:51,783: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 20:21:51,786: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 20:21:51,787: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 20:21:51,787: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 20:21:59,659: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 20:21:59,659: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 20:21:59,659: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 20:21:59,659: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 20:22:01,137: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 20:22:36,501: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 20:22:36,545: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 20:22:36,592: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 20:28:45,922: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 20:28:45,922: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 20:28:45,934: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 20:28:45,937: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 20:28:45,952: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 20:28:54,117: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 20:29:05,427: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 20:29:05,427: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 20:29:06,502: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 20:29:13,304: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 20:29:22,059: INFO: common]: json file saved at: scores.json
+[2022-09-22 20:29:22,061: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 20:29:33,455: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 20:29:33,456: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 20:35:13,550: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 20:35:13,564: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 20:35:13,588: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 20:35:13,609: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 20:35:13,639: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 20:35:18,518: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 20:35:29,963: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 20:35:29,964: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 20:35:31,293: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 20:35:41,782: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 20:35:48,369: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 20:35:55,590: INFO: common]: json file saved at: scores.json
+[2022-09-22 20:35:55,590: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 20:36:13,299: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 20:36:13,299: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 21:26:02,721: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 21:26:02,737: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 21:26:02,763: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 21:26:02,792: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 21:26:02,794: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 21:26:02,794: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 21:26:14,229: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 21:26:14,230: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 21:26:14,230: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 21:26:14,230: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 21:26:16,206: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 21:27:03,036: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 21:27:03,085: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 21:27:03,147: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 21:30:13,930: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 21:30:13,931: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 21:30:13,944: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 21:30:13,946: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 21:30:13,947: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 21:30:18,108: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 21:30:28,440: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 21:30:28,440: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 21:30:29,431: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 21:30:32,246: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 21:30:36,063: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 21:30:42,366: INFO: common]: json file saved at: scores.json
+[2022-09-22 21:30:42,366: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 21:30:53,724: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 21:30:53,725: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 21:37:37,891: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 21:37:37,919: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 21:37:37,943: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 21:37:37,947: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 21:37:37,948: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 21:37:37,949: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 21:37:53,131: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 21:37:53,132: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 21:37:53,133: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 21:37:53,133: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 21:37:55,130: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 21:38:35,197: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 21:38:35,241: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 21:38:41,510: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 21:43:34,376: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 21:43:34,383: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 21:43:34,391: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 21:43:34,393: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 21:43:34,394: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 21:43:34,394: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-22 21:43:41,962: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 21:43:41,962: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (651247,)
+[2022-09-22 21:43:41,962: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 21:43:41,962: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 21:43:43,348: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 21:44:18,878: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 21:44:18,900: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 21:44:25,464: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 21:47:23,410: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 21:47:23,410: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 21:47:23,422: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 21:47:23,425: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 21:47:23,442: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 21:47:29,023: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 21:47:38,907: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 21:47:38,907: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 21:47:39,913: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 21:47:42,589: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 21:47:45,598: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 21:47:52,491: INFO: common]: json file saved at: scores.json
+[2022-09-22 21:47:52,491: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 21:48:03,282: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 21:48:03,282: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+

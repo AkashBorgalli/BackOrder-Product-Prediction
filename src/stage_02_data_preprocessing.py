@@ -44,7 +44,6 @@ def main(config_path, params_path):
     experiment = Experiment(workspace=ws, name="backorder-product")
     run = experiment.start_logging(snapshot_directory=None)
     print("Starting experiment:", experiment.name)
-    run = Run.get_context()
     logging.info(f"fetched the data from : {raw_local_filepath}")
     df = pd.read_csv(raw_local_filepath)
     print(df.shape)
@@ -79,11 +78,15 @@ def main(config_path, params_path):
     X = imp.transform(X)
     logging.info("Filled missing values for lead_time, perf_6_month_avg and perf_12_month_avg columns")
     new_X_df =pd.DataFrame(X,columns=["national_inv","lead_time","in_transit_qty","forecast_6_month","sales_1_month","sales_3_month","sales_6_month","min_bank","potential_issue","pieces_past_due","perf_6_month_avg","perf_12_month_avg","local_bo_qty","oe_constraint","rev_stop"])
+    logging.info('****After Filling missing values data *****')
+    logging.info(new_X_df.head(3))
     # Applying cuberoot for normally distributed data
     skewed = ['national_inv','lead_time', 'in_transit_qty' , 'forecast_6_month', 'sales_1_month', 'sales_3_month', 'sales_6_month' , 'min_bank', 'pieces_past_due', 'perf_6_month_avg', 'perf_12_month_avg', 'local_bo_qty']
     for i in skewed:
         new_X_df[i] = np.cbrt(new_X_df[i])
-    logging.info("Applying cuberoot for normally distributed data")
+    logging.info("Applied cuberoot for normally distributed data")
+    logging.info('****After Filling missing values data *****')
+    logging.info(new_X_df.head(3))
     # Handling imbalance data
     smoteenn = SMOTEENN(n_jobs=params['base']['n_jobs'])
     print('Original dataset shape %s' % Counter(y))
@@ -95,6 +98,7 @@ def main(config_path, params_path):
 
     result = pd.concat([X_res,y_res],axis = 1)
     logging.info("Applied Smoteen to handle imbalanceness of data")
+    logging.info(new_X_df.head(3))
     result.to_csv(prep_local_filepath,index=False)
     logging.info(f"Saved the prep data to: {prep_local_filepath}")
     run.complete()

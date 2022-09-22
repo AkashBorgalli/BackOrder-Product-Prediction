@@ -1,14 +1,15 @@
 import argparse
 import os
 import shutil
+import dill
 from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, save_json
 import random
 import pandas as pd
-import joblib
+import dill
 import numpy as np
-from sklearn.metrics import recall_score, precision_score, f1_score
+from sklearn.metrics import recall_score, precision_score, f1_score, classification_report
 from azureml.core import Workspace, Dataset, Run, Experiment, Model
 
 STAGE = "Evaluate" ## <<< change stage name 
@@ -54,13 +55,13 @@ def main(config_path, params_path):
     model_dir_path = os.path.join(artifacts_dir, model_dir)
     model_file_path = os.path.join(model_dir_path, model_name)
 
-    clf = joblib.load(model_file_path)
+    clf = dill.load(open(model_file_path,'rb'))
     logging.info("Model loaded")
     
     # predict values
     y_pred=clf.predict(X_test)
     logging.info("loaded prediction values")
-
+    print(classification_report(y_test,y_pred))
     # Model evaluate
     recall, precision, f1 = evaluate_metrics(
         actual_values=y_test,
@@ -73,7 +74,8 @@ def main(config_path, params_path):
         "precision": precision, 
         "f1_score": f1
     }
-
+    ##print(classification_report(y_test,y_pred))
+    logging.info(classification_report(y_test,y_pred))
     run.log_predictions(name='Important metrics',value=scores)
     scores_file_path = config["scores"]
     save_json(scores_file_path, scores)

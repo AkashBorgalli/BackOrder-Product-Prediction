@@ -7,7 +7,7 @@ from src.utils.common import read_yaml, create_directories
 import random
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from posixpath import split
+
 
 
 STAGE = "Split Data Stage" ## <<< change stage name 
