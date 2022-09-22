@@ -12,9 +12,10 @@ artifacts:
   X_TEST: X_test.csv
   Y_TRAIN: y_train.csv
   Y_TEST: y_test.csv
-  TRAINED_MODEL_DIR: model
+  TRAINED_MODEL_DIR: model_dir
   TRAINED_MODEL_NAME: model.pkl
   
+scores: scores.json
 azure:
   subscription_id: 2ff60c86-4824-4a6a-bb33-beb7c5b60b23
   resource_group: akashb-rg

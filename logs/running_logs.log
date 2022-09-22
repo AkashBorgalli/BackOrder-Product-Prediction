@@ -248,3 +248,513 @@ UnboundLocalError: local variable 'SMOTEENN' referenced before assignment
 [2022-09-21 16:52:25,438: INFO: stage_02_data_preprocessing]: Saved the prep data to: artifacts\raw_local_dir\furnished_data.csv
 [2022-09-21 16:52:25,560: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing completed!<<<<<
 
+[2022-09-22 12:54:12,184: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-22 12:54:12,184: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-22 12:54:12,199: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 12:54:12,204: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 12:55:28,975: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-22 12:55:45,780: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-22 12:55:45,819: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-22 12:56:23,768: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 12:56:23,768: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 12:56:23,770: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 12:56:23,772: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 12:56:23,786: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 12:56:29,259: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 12:56:40,015: ERROR: stage_02_data_preprocessing]: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 87, in create_snapshot
+    self._validate_snapshot_size(file_or_folder_path, exclude_function, raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 65, in _validate_snapshot_size
+    raise SnapshotException(error_message)
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: ====================================================================
+
+While attempting to take snapshot of .
+Your total snapshot size exceeds the limit of 300.0 MB.
+Please see http://aka.ms/aml-largefiles on how to work with large files.
+
+====================================================================
+
+
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "====================================================================\n\nWhile attempting to take snapshot of .\nYour total snapshot size exceeds the limit of 300.0 MB.\nPlease see http://aka.ms/aml-largefiles on how to work with large files.\n\n====================================================================\n\n"
+    }
+}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 115, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 44, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 613, in _start_logging
+    raise_from(SnapshotException(error_msg), snapshot_ex)
+  File "<string>", line 3, in raise_from
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+[2022-09-22 13:16:18,004: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-22 13:16:18,004: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-22 13:16:18,006: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:16:18,008: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:18:07,762: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-22 13:18:24,258: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-22 13:18:24,297: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-22 13:18:50,317: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 13:18:50,317: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 13:18:50,319: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:18:50,321: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:18:50,321: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 13:18:56,541: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 13:19:07,087: ERROR: stage_02_data_preprocessing]: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 87, in create_snapshot
+    self._validate_snapshot_size(file_or_folder_path, exclude_function, raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 65, in _validate_snapshot_size
+    raise SnapshotException(error_message)
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: ====================================================================
+
+While attempting to take snapshot of .
+Your total snapshot size exceeds the limit of 300.0 MB.
+Please see http://aka.ms/aml-largefiles on how to work with large files.
+
+====================================================================
+
+
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "====================================================================\n\nWhile attempting to take snapshot of .\nYour total snapshot size exceeds the limit of 300.0 MB.\nPlease see http://aka.ms/aml-largefiles on how to work with large files.\n\n====================================================================\n\n"
+    }
+}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 115, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 44, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 613, in _start_logging
+    raise_from(SnapshotException(error_msg), snapshot_ex)
+  File "<string>", line 3, in raise_from
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+[2022-09-22 13:25:08,758: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-22 13:25:08,769: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-22 13:25:08,791: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:25:08,795: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:27:05,723: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-22 13:27:22,679: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-22 13:27:22,723: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-22 13:27:47,888: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 13:27:47,888: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 13:27:47,891: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:27:47,893: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:27:47,894: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 13:27:54,160: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 13:28:07,045: ERROR: stage_02_data_preprocessing]: '>' not supported between instances of 'int' and 'tuple'
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 116, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 45, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 87, in create_snapshot
+    self._validate_snapshot_size(file_or_folder_path, exclude_function, raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 53, in _validate_snapshot_size
+    size_limit=SNAPSHOT_MAX_SIZE_BYTES, exclude_function=exclude_function)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_file_utils\file_utils.py", line 390, in get_path_size
+    file_or_folder_path, size_limit=size_limit, exclude_function=exclude_function)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_file_utils\file_utils.py", line 373, in get_directory_size
+    if size_limit and total_size > size_limit:
+TypeError: '>' not supported between instances of 'int' and 'tuple'
+[2022-09-22 13:28:41,065: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-22 13:28:41,065: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-22 13:28:41,067: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:28:41,069: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:32:07,712: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-22 13:32:24,485: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-22 13:32:24,524: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-22 13:32:37,245: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 13:32:37,245: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 13:32:37,247: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:32:37,249: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:32:37,250: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 13:32:42,375: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 13:32:57,148: ERROR: stage_02_data_preprocessing]: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 87, in create_snapshot
+    self._validate_snapshot_size(file_or_folder_path, exclude_function, raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 65, in _validate_snapshot_size
+    raise SnapshotException(error_message)
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: ====================================================================
+
+While attempting to take snapshot of .
+Your total snapshot size exceeds the limit of 500.0 MB.
+Please see http://aka.ms/aml-largefiles on how to work with large files.
+
+====================================================================
+
+
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "====================================================================\n\nWhile attempting to take snapshot of .\nYour total snapshot size exceeds the limit of 500.0 MB.\nPlease see http://aka.ms/aml-largefiles on how to work with large files.\n\n====================================================================\n\n"
+    }
+}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 116, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 45, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 613, in _start_logging
+    raise_from(SnapshotException(error_msg), snapshot_ex)
+  File "<string>", line 3, in raise_from
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+[2022-09-22 13:34:09,185: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 13:34:09,185: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 13:34:09,187: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:34:09,188: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:34:09,189: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 13:34:13,922: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 13:38:08,377: ERROR: stage_02_data_preprocessing]: ('Connection aborted.', timeout('The write operation timed out'))
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 116, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 45, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 121, in create_snapshot
+    revision_list = self._upload_snapshot_files(entries_to_send, file_or_folder_path, exclude_function)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 239, in _upload_snapshot_files
+    revision_list = self._upload_files_batch(file_nodes, file_or_folder_path, session)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 210, in _upload_files_batch
+    revision_list.append(file_revision)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_common\async_utils\task_queue.py", line 55, in __exit__
+    self.flush(self.identity)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_common\async_utils\task_queue.py", line 118, in flush
+    self._results.extend((task.wait(awaiter_name=self.identity) for task in completed_tasks))
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_common\async_utils\task_queue.py", line 118, in <genexpr>
+    self._results.extend((task.wait(awaiter_name=self.identity) for task in completed_tasks))
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_common\async_utils\async_task.py", line 58, in wait
+    res = self._handler(self._future, self._logger)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_common\async_utils\async_task.py", line 16, in basic_handler
+    return future.result()
+  File "D:\BackOrder-Product-Prediction\env\lib\concurrent\futures\_base.py", line 428, in result
+    return self.__get_result()
+  File "D:\BackOrder-Product-Prediction\env\lib\concurrent\futures\_base.py", line 384, in __get_result
+    raise self._exception
+  File "D:\BackOrder-Product-Prediction\env\lib\concurrent\futures\thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 200, in perform_upload
+    backoff=BACKOFF_START, retries=RETRY_LIMIT)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_file_utils\upload.py", line 65, in upload_blob_from_stream
+    timeout=timeout, validate_content=True, blob_type="BlockBlob"
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\clientbase.py", line 93, in execute_func_with_reset
+    return ClientBase._execute_func_internal(backoff, retries, module_logger, func, reset_func, *args, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\clientbase.py", line 367, in _execute_func_internal
+    left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\clientbase.py", line 433, in _handle_retry
+    raise error
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\clientbase.py", line 358, in _execute_func_internal
+    response = func(*args, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_blob_client.py", line 731, in upload_blob
+    return upload_block_blob(**options)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_upload_helpers.py", line 165, in upload_block_blob
+    **kwargs
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\uploads.py", line 79, in upload_data_chunks
+    range_ids = [uploader.process_chunk(result) for result in uploader.get_chunk_streams()]
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\uploads.py", line 79, in <listcomp>
+    range_ids = [uploader.process_chunk(result) for result in uploader.get_chunk_streams()]
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\uploads.py", line 195, in process_chunk
+    return self._upload_chunk_with_progress(chunk_offset, chunk_bytes)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\uploads.py", line 211, in _upload_chunk_with_progress
+    range_id = self._upload_chunk(chunk_offset, chunk_data)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\uploads.py", line 266, in _upload_chunk
+    **self.request_options
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\tracing\decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_generated\operations\_block_blob_operations.py", line 1179, in stage_block
+    **kwargs
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 211, in run
+    return first_node.send(pipeline_request)  # type: ignore
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  [Previous line repeated 2 more times]
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\policies\_redirect.py", line 158, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\policies.py", line 544, in send
+    raise err
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\policies.py", line 518, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\policies.py", line 313, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 71, in send
+    response = self.next.send(request)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\_base.py", line 103, in send
+    self._sender.send(request.http_request, **request.context.options),
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_vendor\azure_storage\blob\_shared\base_client.py", line 330, in send
+    return self._transport.send(request, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azure\core\pipeline\transport\_requests_basic.py", line 361, in send
+    raise error
+azure.core.exceptions.ServiceResponseError: ('Connection aborted.', timeout('The write operation timed out'))
+[2022-09-22 13:42:45,489: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-22 13:42:45,503: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-22 13:42:45,533: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 13:42:45,542: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 13:42:45,546: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 13:42:51,356: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 13:43:02,700: INFO: run]: Could not load the run context. Logging offline
+[2022-09-22 13:43:02,700: INFO: stage_02_data_preprocessing]: fetched the data from : artifacts\raw_local_dir\data.csv
+[2022-09-22 13:43:06,476: INFO: stage_02_data_preprocessing]: Dropped last row
+[2022-09-22 13:43:07,506: INFO: stage_02_data_preprocessing]: Converted columns to 0's and 1's
+[2022-09-22 13:43:07,632: INFO: stage_02_data_preprocessing]: Dropped non imp features from the dataset
+[2022-09-22 13:43:07,684: INFO: stage_02_data_preprocessing]: Replacing perf_6_month_avg and perf_12_month_avg with nan values
+[2022-09-22 13:43:07,783: INFO: stage_02_data_preprocessing]: Splitting the dataset into X and y
+[2022-09-22 13:46:40,580: INFO: stage_02_data_preprocessing]: Filled missing values for lead_time, perf_6_month_avg and perf_12_month_avg columns
+[2022-09-22 13:46:41,537: INFO: stage_02_data_preprocessing]: Applying cuberoot for normally distributed data
+[2022-09-22 14:03:00,572: INFO: stage_02_data_preprocessing]: Applied Smoteen to handle imbalanceness of data
+[2022-09-22 14:03:41,254: INFO: stage_02_data_preprocessing]: Saved the prep data to: artifacts\raw_local_dir\furnished_data.csv
+[2022-09-22 14:03:41,447: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing completed!<<<<<
+
+[2022-09-22 14:04:13,153: INFO: stage_03_train_test_split]: 
+********************
+[2022-09-22 14:04:13,154: INFO: stage_03_train_test_split]: >>>>> stage Split Data Stage started <<<<<
+[2022-09-22 14:04:13,165: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:04:13,168: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:04:22,736: INFO: stage_03_train_test_split]: splitting of data in training and test files at test_size: 0.2
+[2022-09-22 14:04:22,737: INFO: common]: created directory at: artifacts\split_data_dir
+[2022-09-22 14:04:58,409: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\X_train.csv for X data
+[2022-09-22 14:05:06,277: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\X_test.csv for X data
+[2022-09-22 14:05:08,034: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\y_train.csv for y data
+[2022-09-22 14:05:08,472: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\y_test.csv for y data
+[2022-09-22 14:05:08,567: INFO: stage_03_train_test_split]: >>>>> stage Split Data Stage completed!<<<<<
+
+[2022-09-22 14:05:29,992: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 14:05:29,992: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 14:05:29,995: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:05:29,996: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:05:29,996: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 14:05:35,866: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 14:05:35,866: ERROR: stage_04_model_training]: 'MODEL_DIR'
+Traceback (most recent call last):
+  File "src/stage_04_model_training.py", line 86, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_model_training.py", line 53, in main
+    model_dir = artifacts["MODEL_DIR"]
+KeyError: 'MODEL_DIR'
+[2022-09-22 14:11:51,871: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 14:11:51,871: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 14:11:51,873: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:11:51,875: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:11:51,875: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 14:11:59,738: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 14:11:59,739: INFO: common]: created directory at: artifacts\model
+[2022-09-22 14:11:59,739: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 14:12:01,391: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 14:12:34,327: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 14:12:34,393: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model\model.pkl
+[2022-09-22 14:12:34,439: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 14:22:14,738: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 14:22:14,738: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 14:22:14,741: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:22:14,742: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:22:14,743: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 14:22:21,852: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 14:22:21,853: INFO: common]: created directory at: artifacts\model
+[2022-09-22 14:22:21,853: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 14:22:23,238: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 14:22:59,685: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 14:22:59,724: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model\model.pkl
+[2022-09-22 14:22:59,789: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 14:40:11,686: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 14:40:11,686: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 14:40:11,688: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:40:11,690: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:40:11,691: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 14:40:19,537: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 14:40:19,539: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 14:40:19,539: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 14:40:21,052: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 14:41:03,396: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 14:41:03,487: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 14:41:03,553: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 14:51:24,858: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 14:51:24,867: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 14:51:24,874: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 14:51:24,878: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 14:51:24,881: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 14:51:30,409: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 14:51:43,222: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 14:51:44,486: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 14:51:47,855: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 14:51:57,943: INFO: common]: json file saved at: scores.json
+[2022-09-22 14:51:57,943: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 14:52:22,838: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 14:52:22,863: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 15:02:25,771: INFO: stage_04_model_training]: 
+********************
+[2022-09-22 15:02:25,771: INFO: stage_04_model_training]: >>>>> stage Model Training started <<<<<
+[2022-09-22 15:02:25,774: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 15:02:25,776: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 15:02:25,776: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-22 15:02:35,030: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-22 15:02:35,032: INFO: stage_04_model_training]: X_train shape: (2604987, 15), X_test shape: (651247, 15), y_train shape: (2604987,), y_test shape: (2604987,)
+[2022-09-22 15:02:35,037: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-22 15:02:35,037: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-22 15:02:36,637: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-22 15:03:05,801: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-22 15:03:05,841: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-22 15:03:05,892: INFO: stage_04_model_training]: >>>>> stage Model Training completed!<<<<<
+
+[2022-09-22 15:29:06,798: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 15:29:06,815: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 15:29:06,837: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 15:29:06,847: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 15:29:06,850: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 15:29:13,249: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 15:29:26,058: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 15:29:26,058: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 15:29:27,539: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 15:29:30,665: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 15:29:40,019: INFO: common]: json file saved at: scores.json
+[2022-09-22 15:29:40,020: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 15:30:01,025: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 15:30:01,025: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+

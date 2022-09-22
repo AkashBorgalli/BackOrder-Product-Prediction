@@ -3,6 +3,9 @@ stages:
   get_n_save_data:
     cmd: python src/stage_01_load_n_save_data.py
     deps:
+    - path: configs/config.yaml
+      md5: 95dc3144d5d6926fad3fd05f40e7aed1
+      size: 507
     - path: src/stage_01_load_n_save_data.py
       md5: 5504fa91c26a94988828c1d3d702e4b1
       size: 1960
@@ -16,13 +19,59 @@ stages:
   data_preprocessing:
     cmd: python src/stage_02_data_preprocessing.py
     deps:
-    - path: src/stage_01_load_n_save_data.py
-      md5: 5504fa91c26a94988828c1d3d702e4b1
-      size: 1960
+    - path: artifacts/raw_local_dir/data.csv
+      md5: beab4b619262caa674d1effc5571259c
+      size: 199208135
+    - path: configs/config.yaml
+      md5: 95dc3144d5d6926fad3fd05f40e7aed1
+      size: 507
+    - path: src/stage_02_data_preprocessing.py
+      md5: 8ac216379ea01c85e639d8730d2476f0
+      size: 5657
     - path: src/utils/common.py
       md5: 9f71ea88d976cfa75079eafb33966dfc
       size: 857
+    params:
+      params.yaml:
+        base.n_jobs: -1
+        imputer.imputation_order: roman
+        imputer.max_iter: 10
+        imputer.random_state: 0
+        imputer.tol: 1e-10
+        imputer.verbose: 2
     outs:
     - path: artifacts/raw_local_dir/furnished_data.csv
-      md5: 30c56bb1cce7f937429680a33e2280b3
-      size: 502165534
+      md5: 42e54241d53bac790ff4702160f9110b
+      size: 502192066
+  split_data:
+    cmd: python src/stage_03_train_test_split.py
+    deps:
+    - path: artifacts/raw_local_dir/furnished_data.csv
+      md5: 42e54241d53bac790ff4702160f9110b
+      size: 502192066
+    - path: configs/config.yaml
+      md5: 95dc3144d5d6926fad3fd05f40e7aed1
+      size: 507
+    - path: src/stage_02_data_preprocessing.py
+      md5: 8ac216379ea01c85e639d8730d2476f0
+      size: 5657
+    - path: src/utils/common.py
+      md5: 9f71ea88d976cfa75079eafb33966dfc
+      size: 857
+    params:
+      params.yaml:
+        base.random_state: 11
+        base.test_size: 0.2
+    outs:
+    - path: artifacts/split_data_dir/X_test.csv
+      md5: 31795d429c9f4fcdc71b4ba66da3a3f7
+      size: 98754656
+    - path: artifacts/split_data_dir/X_train.csv
+      md5: 1988be660696c6ff59a434187d72ca2c
+      size: 394965303
+    - path: artifacts/split_data_dir/y_test.csv
+      md5: 4e43a92d1d0502a366e4f7ab5a0aa913
+      size: 1953760
+    - path: artifacts/split_data_dir/y_train.csv
+      md5: 42ec5676d14ff3f923a9077aea95a0ed
+      size: 7814980

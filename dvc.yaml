@@ -13,7 +13,7 @@ stages:
     deps:
     - src/stage_02_data_preprocessing.py
     - src/utils/common.py
-    - artifacts/raw_local_dir/furnished_data.csv
+    - artifacts/raw_local_dir/data.csv
     - configs/config.yaml
     params:
       - base.n_jobs
@@ -22,6 +22,8 @@ stages:
       - imputer.random_state
       - imputer.imputation_order
       - imputer.verbose
+    outs:
+    - artifacts/raw_local_dir/furnished_data.csv
 
   split_data:
     cmd: python src/stage_03_train_test_split.py
@@ -41,7 +43,7 @@ stages:
   train:
     cmd: python src/stage_04_model_training.py
     deps:
-    - src/stage_03_train_test_split.py
+    - src/stage_04_model_training.py
     - src/utils/common.py
     - artifacts/split_data_dir/X_train.csv
     - artifacts/split_data_dir/X_test.csv
@@ -55,3 +57,16 @@ stages:
       - base.n_jobs      
     outs:
     - artifacts/model_dir/model.pkl
+  evaluate:
+    cmd: python src/stage_05_evaluate.py
+    deps:
+    - src/stage_05_evaluate.py
+    - src/utils/common.py
+    - artifacts/split_data_dir/X_test.csv
+    - artifacts/split_data_dir/y_test.csv
+    - artifacts/model_dir/model.pkl
+    - params.yaml
+    - configs/config.yaml     
+    metrics:
+      - scores.json:
+          cache: false

@@ -12,9 +12,9 @@ from imblearn.combine import SMOTEENN
 from collections import Counter
 from sklearn.linear_model import LinearRegression
 from sklearn.impute import IterativeImputer
-from azureml.core import Workspace, Dataset, Run
+from azureml.core import Workspace, Dataset, Run, Experiment
 from src.utils.common import read_yaml, create_directories
-from azureml.core import Experiment
+import azureml._restclient.snapshots_client
 
 
 STAGE = "Data Preprocessing" ## <<< change stage name 
@@ -42,7 +42,7 @@ def main(config_path, params_path):
     prep_local_filepath = os.path.join(raw_local_dir_path, prep_file)
     ws = Workspace.from_config()
     experiment = Experiment(workspace=ws, name="backorder-product")
-    run = experiment.start_logging()
+    run = experiment.start_logging(snapshot_directory=None)
     print("Starting experiment:", experiment.name)
     run = Run.get_context()
     logging.info(f"fetched the data from : {raw_local_filepath}")
