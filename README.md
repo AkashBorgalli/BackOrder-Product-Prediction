@@ -91,7 +91,7 @@ Steps : 1. Dropped last record.\
 
 
 - **Registered Model(Light Gradient Boosting Model) on Azure**
-![](screenshots/registered_Model.PNG)
+![](screenshots/registered_model.PNG)
 
 
 
