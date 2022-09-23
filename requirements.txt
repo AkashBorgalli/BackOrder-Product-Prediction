@@ -30,6 +30,7 @@ papermill
 pyqt5-tools
 pillow==8.0.0
 pyarrow
+dill
 
 ### local packages -
 -e . # << uncomment this to install from setup.py

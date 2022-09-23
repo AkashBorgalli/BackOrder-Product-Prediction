@@ -93,6 +93,9 @@ Steps : 1. Dropped last record.\
 - **Registered Model(Light Gradient Boosting Model) on Azure**
 ![](screenshots/registered_model.PNG)
 
+- **DVC Interactive Studio**
+![](screenshots/dvc_interactive.PNG)
+
 
 
 ## Author <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Developer.gif" width=35 height=25>
