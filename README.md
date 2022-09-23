@@ -93,7 +93,7 @@ Steps : 1. Dropped last record.\
 - **Registered Model(Light Gradient Boosting Model) on Azure**
 ![](screenshots/registered_model.PNG)
 
-- **DVC Interactive Studio**
+- **DVC Interactive Studio for Continuous Machine Learning**
 ![](screenshots/dvc_interactive.PNG)
 
 
