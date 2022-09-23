@@ -39,19 +39,19 @@ Classify the products whether they would go into Backorder(Yes or No) based on t
 ## 📜 Data Description:
 The dataset provides 23  input variables that are a mixture of categorical and numerical data types. The complete list of variables is as follows:
 
-* sku(Stock Keeping unit) : The product id — Unique for each row so can be ignored
-* national_inv : The present inventory level of the product.
-* lead_time : Transit time of the product.
-* in_transit_qty : The amount of product in transit.
-* forecast_3_month, forecast_6_month, forecast_9_month : Forecast of the sales of the product for coming 3, 6 and 9 months respectively.
-* sales_1_month, sales_3_month, sales_6_month, sales_9_month : Actual sales of the product in last 1, 3, 6 and 9 months respectively.
-* min_bank : Minimum amount of stock recommended.
-* potential_issue : Any problem identified in the product/part.
-* pieces_past_due: Amount of parts of the product overdue if any.
-* perf_6_month_avg, perf_12_month_avg : Product performance over past 6 and 12 months respectively.
-* local_bo_qty : Amount of stock overdue.
-* deck_risk, oe_constraint, ppap_risk, stop_auto_buy, rev_stop : Different Flags (Yes or No) set for the product.
-* went_on_backorder : Target variable, product went on backorder or not
+* **sku(Stock Keeping unit) :** The product id — Unique for each row so can be ignored
+* **national_inv :** The present inventory level of the product.
+* **lead_time :** Transit time of the product.
+* **in_transit_qty :** The amount of product in transit.
+* **forecast_3_month, forecast_6_month, forecast_9_month :** Forecast of the sales of the product for coming 3, 6 and 9 months respectively.
+* **sales_1_month, sales_3_month, sales_6_month, sales_9_month :** Actual sales of the product in last 1, 3, 6 and 9 months respectively.
+* **min_bank :** Minimum amount of stock recommended.
+* **potential_issue :** Any problem identified in the product/part.
+* **pieces_past_due:** Amount of parts of the product overdue if any.
+* **perf_6_month_avg, perf_12_month_avg :** Product performance over past 6 and 12 months respectively.
+* **local_bo_qty :** Amount of stock overdue.
+* **deck_risk, oe_constraint, ppap_risk, stop_auto_buy, rev_stop :** Different Flags (Yes or No) set for the product.
+* **went_on_backorder :** Target variable, product went on backorder or not
 
 ## 📝 Features used from AzureML for this project
 
