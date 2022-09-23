@@ -3,7 +3,7 @@ import os
 import shutil
 from tqdm import tqdm
 import logging
-from src.utils.common import read_yaml, create_directories
+from src.utils.common import read_yaml, create_directories, save_json
 import random
 import lightgbm as lgb
 import pandas as pd
@@ -11,9 +11,9 @@ from sklearn.preprocessing import RobustScaler
 ##import joblib
 import dill
 from sklearn.metrics import * 
+from azureml.core import Workspace, Dataset, Run, Experiment, Model
 
-
-STAGE = "Model Training" ## <<< change stage name 
+STAGE = "Model Training & Evaluate" ## <<< change stage name 
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
@@ -22,14 +22,21 @@ logging.basicConfig(
     filemode="a"
     )
 
+def evaluate_metrics(actual_values, predicted_values):
+    recall = recall_score(actual_values, predicted_values)
+    precision = precision_score(actual_values, predicted_values)
+    f1 = f1_score(actual_values, predicted_values)
+    return recall, precision, f1
+
 
 def main(config_path, params_path):
     ## read config files
     config = read_yaml(config_path)
     params = read_yaml(params_path)
-    
-
-
+    ws = Workspace.from_config()
+    experiment = Experiment(workspace=ws, name="backorder-product")
+    run = experiment.start_logging(snapshot_directory=None)
+    print("Starting experiment:", experiment.name)
     artifacts = config["artifacts"]
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
     split_data_dir = artifacts["SPLIT_DATA_DIR"]
@@ -80,9 +87,38 @@ def main(config_path, params_path):
     ## Saving the model
     dill.dump(clf, open(model_file_path,'wb'))
     logging.info(f"model is trained and saved at: {model_file_path}")
+
+    # loading for prediction
     lgb_mdl = dill.load(open(model_file_path,'rb'))
     y_pred = lgb_mdl.predict(X_test)
+    logging.info("loading model for prediction")
     print(classification_report(y_test,y_pred))
+    # Model evaluate
+    recall, precision, f1 = evaluate_metrics(
+        actual_values=y_test,
+        predicted_values=y_pred
+    )
+    logging.info("Calculating Model metrics")
+    scores = {
+        "recall": recall, 
+        "precision": precision, 
+        "f1_score": f1
+    }
+
+    run.log('Recall',recall)
+    run.log('Precision',precision)
+    run.log('F1-Score',f1)
+    logging.info(f"Recall: {recall}, Precision: {precision}, F1-Score: {f1}")
+    scores_file_path = config["scores"]
+    save_json(scores_file_path, scores)
+    logging.info("Saved the scores in json format")
+    Model.register(workspace=run.experiment.workspace,
+               model_path = model_file_path,
+               model_name = 'backorder_product_prediction_model',
+               tags={'Training context':'Inline'},
+               properties=scores)
+    run.complete()
+    logging.info("Run Completed")
 
 
 if __name__ == '__main__':

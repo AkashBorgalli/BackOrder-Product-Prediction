@@ -990,3 +990,399 @@ weighted avg       0.76      0.61      0.55    651247
 [2022-09-22 21:48:03,282: INFO: stage_05_evaluate]: Run Completed
 [2022-09-22 21:48:03,282: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
 
+[2022-09-22 22:21:10,895: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 22:21:10,901: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 22:21:10,921: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 22:21:10,941: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 22:21:10,980: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 22:21:16,959: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 22:21:39,332: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 22:21:39,335: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 22:21:48,691: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 22:21:48,692: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 22:21:52,813: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 22:22:01,972: INFO: common]: json file saved at: scores.json
+[2022-09-22 22:22:01,973: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 22:22:14,132: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 22:22:14,132: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 22:30:48,992: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 22:30:48,993: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 22:30:49,012: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 22:30:49,017: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 22:30:49,019: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-22 22:30:53,308: INFO: clientbase]: Created a worker pool for first use
+[2022-09-22 22:31:11,128: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 22:31:11,128: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 22:31:17,373: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 22:31:17,373: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 22:31:19,659: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 22:31:26,159: INFO: common]: json file saved at: scores.json
+[2022-09-22 22:31:26,160: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 22:31:38,965: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 22:31:38,966: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-22 22:37:03,152: INFO: stage_05_evaluate]: 
+********************
+[2022-09-22 22:37:03,152: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-22 22:37:03,168: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-22 22:37:03,177: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-22 22:37:12,230: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-22 22:37:12,230: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-22 22:37:18,491: INFO: stage_05_evaluate]: Model loaded
+[2022-09-22 22:37:18,491: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-22 22:37:20,399: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-22 22:37:20,423: INFO: common]: json file saved at: scores.json
+[2022-09-22 22:37:20,423: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-22 22:37:20,424: INFO: stage_05_evaluate]: Run Completed
+[2022-09-22 22:37:20,467: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 11:16:05,987: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 11:16:06,003: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 11:16:06,039: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 11:16:06,049: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 11:16:16,565: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-23 11:16:16,587: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-23 11:16:25,017: INFO: stage_05_evaluate]: Model loaded
+[2022-09-23 11:16:25,017: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-23 11:16:26,959: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-23 11:16:27,065: INFO: common]: json file saved at: scores.json
+[2022-09-23 11:16:27,065: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-23 11:16:27,066: INFO: stage_05_evaluate]: Run Completed
+[2022-09-23 11:16:27,127: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 11:23:01,221: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 11:23:01,233: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 11:23:01,252: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 11:23:01,257: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 11:23:09,652: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-23 11:23:09,652: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-23 11:23:15,255: INFO: stage_05_evaluate]: Model loaded
+[2022-09-23 11:23:15,256: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-23 11:23:17,011: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-23 11:23:17,013: INFO: common]: json file saved at: scores.json
+[2022-09-23 11:23:17,013: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-23 11:23:17,013: INFO: stage_05_evaluate]: Run Completed
+[2022-09-23 11:23:17,046: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:03:18,034: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-23 12:03:18,037: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-23 12:03:18,053: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:03:18,055: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:10:49,679: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-23 12:11:28,868: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-23 12:11:28,917: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-23 12:23:58,124: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:23:58,136: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:23:58,155: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:23:58,159: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:24:07,417: INFO: stage_05_evaluate]: loaded X_test, y_test data for model training
+[2022-09-23 12:24:07,418: INFO: stage_05_evaluate]: X_test shape: (651247, 15), y_test shape: (651247,)
+[2022-09-23 12:24:14,122: INFO: stage_05_evaluate]: Model loaded
+[2022-09-23 12:24:14,122: INFO: stage_05_evaluate]: loaded prediction values
+[2022-09-23 12:24:16,723: INFO: stage_05_evaluate]:               precision    recall  f1-score   support
+
+           0       0.57      0.99      0.72    328386
+           1       0.97      0.23      0.37    322861
+
+    accuracy                           0.61    651247
+   macro avg       0.77      0.61      0.54    651247
+weighted avg       0.76      0.61      0.55    651247
+
+[2022-09-23 12:24:16,724: INFO: common]: json file saved at: scores.json
+[2022-09-23 12:24:16,724: INFO: stage_05_evaluate]: Saved the scores in json format
+[2022-09-23 12:24:16,724: INFO: stage_05_evaluate]: Run Completed
+[2022-09-23 12:24:16,756: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:36:21,487: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:36:21,488: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:36:21,515: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:36:21,517: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:36:28,377: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:37:13,812: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:37:13,812: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:37:13,814: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:37:13,816: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:37:19,306: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:37:56,617: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:37:56,617: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:37:56,619: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:37:56,620: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:38:00,825: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:38:28,619: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:38:28,619: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:38:28,621: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:38:28,623: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 12:38:32,878: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:42:14,287: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:42:14,298: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:42:14,298: ERROR: stage_05_evaluate]: main() missing 1 required positional argument: 'params_path'
+Traceback (most recent call last):
+  File "src/stage_05_evaluate.py", line 50, in <module>
+    main(config_path=parsed_args.config)
+TypeError: main() missing 1 required positional argument: 'params_path'
+[2022-09-23 12:42:45,511: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:42:45,511: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:42:45,623: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:42:53,080: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:44:40,993: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:44:40,993: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:44:40,996: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:44:46,176: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:51:29,461: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:51:29,461: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:51:29,463: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:51:34,667: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 12:52:48,040: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 12:52:48,040: INFO: stage_05_evaluate]: >>>>> stage Evaluate started <<<<<
+[2022-09-23 12:52:48,043: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 12:52:53,311: INFO: stage_05_evaluate]: >>>>> stage Evaluate completed!<<<<<
+
+[2022-09-23 13:09:42,686: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 13:09:42,700: INFO: stage_05_evaluate]: >>>>> stage Evaluate  started <<<<<
+[2022-09-23 13:09:42,700: ERROR: stage_05_evaluate]: main() got an unexpected keyword argument 'params_path'
+Traceback (most recent call last):
+  File "src/stage_05_evaluate.py", line 58, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+TypeError: main() got an unexpected keyword argument 'params_path'
+[2022-09-23 13:10:18,583: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 13:10:18,583: INFO: stage_05_evaluate]: >>>>> stage Evaluate  started <<<<<
+[2022-09-23 13:10:18,689: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:10:20,858: ERROR: stage_05_evaluate]: module 'dill' has no attribute 'load_model'
+Traceback (most recent call last):
+  File "src/stage_05_evaluate.py", line 57, in <module>
+    main(config_path=parsed_args.config)
+  File "src/stage_05_evaluate.py", line 37, in main
+    mdl = dill.load_model(open('artifacts/model_dir/model.pkl','rb'))
+AttributeError: module 'dill' has no attribute 'load_model'
+[2022-09-23 13:10:48,901: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 13:10:48,901: INFO: stage_05_evaluate]: >>>>> stage Evaluate  started <<<<<
+[2022-09-23 13:10:48,904: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:10:56,496: INFO: stage_05_evaluate]: >>>>> stage Evaluate  completed!<<<<<
+
+[2022-09-23 13:21:16,537: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 13:21:16,554: INFO: stage_05_evaluate]: >>>>> stage Evaluate  started <<<<<
+[2022-09-23 13:21:16,562: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:21:24,597: INFO: stage_05_evaluate]: >>>>> stage Evaluate  completed!<<<<<
+
+[2022-09-23 13:23:25,440: INFO: stage_03_train_test_split]: 
+********************
+[2022-09-23 13:23:25,440: INFO: stage_03_train_test_split]: >>>>> stage Split Data Stage started <<<<<
+[2022-09-23 13:23:25,443: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:23:25,445: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 13:23:39,289: INFO: stage_03_train_test_split]: splitting of data in training and test files at test_size: 0.2
+[2022-09-23 13:23:39,312: INFO: common]: created directory at: artifacts\split_data_dir
+[2022-09-23 13:24:18,200: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\X_train.csv for X data
+[2022-09-23 13:24:27,421: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\X_test.csv for X data
+[2022-09-23 13:24:29,484: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\y_train.csv for y data
+[2022-09-23 13:24:30,120: INFO: stage_03_train_test_split]: data is saved at: artifacts\split_data_dir\y_test.csv for y data
+[2022-09-23 13:24:30,265: INFO: stage_03_train_test_split]: >>>>> stage Split Data Stage completed!<<<<<
+
+[2022-09-23 13:25:56,136: INFO: stage_05_evaluate]: 
+********************
+[2022-09-23 13:25:56,137: INFO: stage_05_evaluate]: >>>>> stage Evaluate  started <<<<<
+[2022-09-23 13:25:56,181: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:26:02,862: INFO: stage_05_evaluate]: >>>>> stage Evaluate  completed!<<<<<
+
+[2022-09-23 13:59:22,634: INFO: stage_04_model_training]: 
+********************
+[2022-09-23 13:59:22,643: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate started <<<<<
+[2022-09-23 13:59:22,651: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 13:59:22,661: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 13:59:22,679: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-23 13:59:27,925: INFO: clientbase]: Created a worker pool for first use
+[2022-09-23 13:59:37,821: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-23 13:59:37,821: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-23 13:59:51,404: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-23 13:59:51,404: INFO: stage_04_model_training]: X_train shape: (2604704, 15), X_test shape: (651177, 15), y_train shape: (2604704,), y_test shape: (651177,)
+[2022-09-23 13:59:51,406: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-23 13:59:51,406: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-23 13:59:53,751: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-23 14:00:30,729: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-23 14:00:30,854: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-23 14:00:38,333: INFO: common]: json file saved at: scores.json
+[2022-09-23 14:00:38,333: INFO: stage_04_model_training]: Saved the scores in json format
+[2022-09-23 14:01:01,545: INFO: stage_04_model_training]: Run Completed
+[2022-09-23 14:01:01,545: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate completed!<<<<<
+
+[2022-09-23 14:05:59,800: INFO: stage_04_model_training]: 
+********************
+[2022-09-23 14:05:59,800: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate started <<<<<
+[2022-09-23 14:05:59,808: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 14:05:59,811: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 14:05:59,812: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-23 14:06:02,839: INFO: clientbase]: Created a worker pool for first use
+[2022-09-23 14:06:09,926: ERROR: stage_04_model_training]: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 609, in _start_logging
+    run.take_snapshot(snapshot_directory)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 2201, in take_snapshot
+    return self._client.take_snapshot(file_or_folder_path)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_run_impl\run_history_facade.py", line 706, in take_snapshot
+    raise_on_validation_failure=_raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 87, in create_snapshot
+    self._validate_snapshot_size(file_or_folder_path, exclude_function, raise_on_validation_failure)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\_restclient\snapshots_client.py", line 65, in _validate_snapshot_size
+    raise SnapshotException(error_message)
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: ====================================================================
+
+While attempting to take snapshot of .
+Your total snapshot size exceeds the limit of 300.0 MB.
+Please see http://aka.ms/aml-largefiles on how to work with large files.
+
+====================================================================
+
+
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "====================================================================\n\nWhile attempting to take snapshot of .\nYour total snapshot size exceeds the limit of 300.0 MB.\nPlease see http://aka.ms/aml-largefiles on how to work with large files.\n\n====================================================================\n\n"
+    }
+}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_04_model_training.py", line 133, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_model_training.py", line 38, in main
+    run = experiment.start_logging()
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\experiment.py", line 279, in start_logging
+    return Run._start_logging(self, *args, _parent_logger=self._logger, **kwargs)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\azureml\core\run.py", line 613, in _start_logging
+    raise_from(SnapshotException(error_msg), snapshot_ex)
+  File "<string>", line 3, in raise_from
+azureml.exceptions._azureml_exception.SnapshotException: SnapshotException:
+	Message: Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "Failed to take a snapshot of .. Pass snapshot_directory=None to start_logging to skip taking a snapshot of the given directory."
+    }
+}
+[2022-09-23 14:13:04,963: INFO: stage_04_model_training]: 
+********************
+[2022-09-23 14:13:04,963: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate started <<<<<
+[2022-09-23 14:13:04,964: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 14:13:04,966: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 14:13:04,967: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-23 14:13:08,739: INFO: clientbase]: Created a worker pool for first use
+[2022-09-23 14:13:14,333: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-23 14:13:14,333: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-23 14:13:22,613: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-23 14:13:22,632: INFO: stage_04_model_training]: X_train shape: (2604704, 15), X_test shape: (651177, 15), y_train shape: (2604704,), y_test shape: (651177,)
+[2022-09-23 14:13:22,633: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-23 14:13:22,633: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-23 14:13:25,759: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-23 14:13:53,209: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-23 14:13:53,239: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-23 14:13:56,586: INFO: stage_04_model_training]: loading model for prediction
+[2022-09-23 14:13:58,522: INFO: stage_04_model_training]: Calculating Model metrics
+[2022-09-23 14:13:58,565: INFO: stage_04_model_training]: Recall: 0.9764560482959209, Precision: 0.9686550332930806, F1-Score: 0.9725398975143686
+[2022-09-23 14:13:58,568: INFO: common]: json file saved at: scores.json
+[2022-09-23 14:13:58,568: INFO: stage_04_model_training]: Saved the scores in json format
+[2022-09-23 14:14:10,611: INFO: stage_04_model_training]: Run Completed
+[2022-09-23 14:14:10,611: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate completed!<<<<<
+
+[2022-09-23 14:17:23,023: INFO: stage_04_model_training]: 
+********************
+[2022-09-23 14:17:23,023: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate started <<<<<
+[2022-09-23 14:17:23,035: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-23 14:17:23,037: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-23 14:17:23,038: INFO: workspace]: Found the config file in: D:\BackOrder-Product-Prediction\config.json
+[2022-09-23 14:17:26,960: INFO: clientbase]: Created a worker pool for first use
+[2022-09-23 14:17:32,654: INFO: stage_04_model_training]: loaded model parameters
+[2022-09-23 14:17:32,654: INFO: stage_04_model_training]: boosting_type: goss,objective: binary,n_estimators:200,n_jobs:-1
+[2022-09-23 14:17:39,792: INFO: stage_04_model_training]: loaded X_train, X_test, y_train, y_test data for model training
+[2022-09-23 14:17:39,794: INFO: stage_04_model_training]: X_train shape: (2604704, 15), X_test shape: (651177, 15), y_train shape: (2604704,), y_test shape: (651177,)
+[2022-09-23 14:17:39,794: INFO: common]: created directory at: artifacts\model_dir
+[2022-09-23 14:17:39,794: INFO: stage_04_model_training]: Created model directory and loaded model path
+[2022-09-23 14:17:41,188: INFO: stage_04_model_training]: Performed Robust Scaling
+[2022-09-23 14:18:07,415: INFO: stage_04_model_training]: Completed Model Training
+[2022-09-23 14:18:07,425: INFO: stage_04_model_training]: model is trained and saved at: artifacts\model_dir\model.pkl
+[2022-09-23 14:18:10,715: INFO: stage_04_model_training]: loading model for prediction
+[2022-09-23 14:18:12,799: INFO: stage_04_model_training]: Calculating Model metrics
+[2022-09-23 14:18:12,925: INFO: stage_04_model_training]: Recall: 0.9764560482959209, Precision: 0.9686550332930806, F1-Score: 0.9725398975143686
+[2022-09-23 14:18:12,927: INFO: common]: json file saved at: scores.json
+[2022-09-23 14:18:12,927: INFO: stage_04_model_training]: Saved the scores in json format
+[2022-09-23 14:18:24,093: INFO: stage_04_model_training]: Run Completed
+[2022-09-23 14:18:24,093: INFO: stage_04_model_training]: >>>>> stage Model Training & Evaluate completed!<<<<<
+
