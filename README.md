@@ -85,9 +85,9 @@ Steps : 1. Dropped last record.\
 
 
 ## 💡 Screenshots:
-- **Performance Metric of an experiment over Azure**\
+- **Performance Metric of an experiment over Azure**
 
-![](screenshots/backorder_metrics.PNG)
+![](screenshots/backorder_metric.PNG)
 
 
 - **Registered Model(Light Gradient Boosting Model) on Azure**
