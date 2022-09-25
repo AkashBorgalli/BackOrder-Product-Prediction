@@ -56,7 +56,7 @@ def main(config_path, params_path):
     Cols_for_str_to_bool = ['potential_issue', 'deck_risk', 'oe_constraint', 'ppap_risk',
                         'stop_auto_buy', 'rev_stop', 'went_on_backorder']
     for col_name in Cols_for_str_to_bool:
-        df[col_name] = df[col_name].map({False:0, True:1})
+        df[col_name] = df[col_name].map({'No':0, 'Yes':1})
         df[col_name] = df[col_name].astype(int)
     logging.info("Converted columns to 0's and 1's")
     # Removing the non imp features from the dataset
