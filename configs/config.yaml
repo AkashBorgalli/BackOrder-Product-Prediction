@@ -1,5 +1,6 @@
 # It contains all the configs required in the project
 
+data_source: https://akashbws8158894669.blob.core.windows.net/azureml-blobstore-aaaa0ae0-13b1-4df4-ae9b-fa32525b3243/UI/09-19-2022_010328_UTC/train_data_bo.csv
 
 
 artifacts:

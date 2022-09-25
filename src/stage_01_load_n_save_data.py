@@ -6,9 +6,12 @@ from tqdm import tqdm
 import logging
 from src.utils.common import read_json, read_yaml, create_directories
 import random
-from azureml.core import Workspace, Dataset
-
-
+#from azureml.core import Workspace, Dataset
+import pandas as pd
+import requests
+from io import BytesIO
+import  zipfile
+import shutil   
 STAGE = "Get and Save Data" ## <<< change stage name 
 
 logging.basicConfig(
@@ -23,18 +26,18 @@ def main(config_path, params_path):
     ## read config files
     config = read_yaml(config_path)
     params = read_yaml(params_path)
-    azure = config['azure']
+    remote_data_URL = config["data_source"]
+    df = pd.read_csv(remote_data_URL, sep=";")
     artifacts = config['artifacts']
-    workspace = Workspace(azure['subscription_id'],azure['resource_group'],azure['workspace_name']) 
-    dataset = Dataset.get_by_name(workspace, name=params['dataset']['name']).to_pandas_dataframe()
     artifacts_dir = artifacts['ARTIFACTS_DIR']
     raw_local_dir = artifacts['RAW_LOCAL_DIR']
     raw_local_file = artifacts['RAW_LOCAL_FILE']
     raw_local_dir_path = os.path.join(artifacts_dir,raw_local_dir)
     create_directories([raw_local_dir_path])
-    raw_local_file_path = os.path.join(raw_local_dir_path,raw_local_file)
-    dataset.to_csv(raw_local_file_path,sep=",",index=False)
-    logging.info(f'raw data is saved at: {raw_local_file_path} successfully')
+    raw_local_filepath = os.path.join(raw_local_dir_path,raw_local_file)
+    
+    df.to_csv(raw_local_filepath, sep=",", index=False)
+    logging.info(f'raw data is saved at: {raw_local_filepath} successfully')
 
 
 

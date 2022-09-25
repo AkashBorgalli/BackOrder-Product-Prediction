@@ -14,7 +14,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.impute import IterativeImputer
 from azureml.core import Workspace, Dataset, Run, Experiment
 from src.utils.common import read_yaml, create_directories
-import azureml._restclient.snapshots_client
+#import azureml._restclient.snapshots_client
 
 
 STAGE = "Data Preprocessing" ## <<< change stage name 

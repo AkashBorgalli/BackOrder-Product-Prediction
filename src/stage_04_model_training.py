@@ -33,10 +33,10 @@ def main(config_path, params_path):
     ## read config files
     config = read_yaml(config_path)
     params = read_yaml(params_path)
-    ws = Workspace.from_config()
-    experiment = Experiment(workspace=ws, name="backorder-product")
-    run = experiment.start_logging(snapshot_directory=None)
-    print("Starting experiment:", experiment.name)
+    # ws = Workspace.from_config()
+    # experiment = Experiment(workspace=ws, name="backorder-product")
+    # run = experiment.start_logging(snapshot_directory=None)
+    # print("Starting experiment:", experiment.name)
     artifacts = config["artifacts"]
     artifacts_dir = artifacts["ARTIFACTS_DIR"]
     split_data_dir = artifacts["SPLIT_DATA_DIR"]
@@ -105,19 +105,19 @@ def main(config_path, params_path):
         "f1_score": f1
     }
 
-    run.log('Recall',recall)
-    run.log('Precision',precision)
-    run.log('F1-Score',f1)
+    # run.log('Recall',recall)
+    # run.log('Precision',precision)
+    # run.log('F1-Score',f1)
     logging.info(f"Recall: {recall}, Precision: {precision}, F1-Score: {f1}")
     scores_file_path = config["scores"]
     save_json(scores_file_path, scores)
     logging.info("Saved the scores in json format")
-    Model.register(workspace=run.experiment.workspace,
-               model_path = model_file_path,
-               model_name = 'backorder_product_prediction_model',
-               tags={'Training context':'Inline'},
-               properties=scores)
-    run.complete()
+    # Model.register(workspace=run.experiment.workspace,
+    #            model_path = model_file_path,
+    #            model_name = 'backorder_product_prediction_model',
+    #            tags={'Training context':'Inline'},
+    #            properties=scores)
+    # run.complete()
     logging.info("Run Completed")
 
 
