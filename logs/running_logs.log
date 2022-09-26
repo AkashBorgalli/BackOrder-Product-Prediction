@@ -1490,3 +1490,124 @@ shutil.ReadError: backorder_data.zip is not a zip file
 [2022-09-25 12:40:09,721: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
 [2022-09-25 12:40:09,773: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
 
+[2022-09-26 09:26:05,787: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 09:26:05,808: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 09:26:05,840: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 09:26:05,850: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-26 09:28:03,819: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-26 09:28:12,199: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-26 09:28:12,284: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-26 09:30:18,574: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 09:30:18,574: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 09:30:18,591: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 09:30:18,593: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-26 09:31:11,030: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-26 09:31:20,472: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-26 09:31:20,581: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-26 09:33:48,612: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 09:33:48,612: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 09:33:48,630: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 09:33:48,635: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-26 09:35:14,140: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-26 09:35:14,154: INFO: stage_01_load_n_save_data]:   sku,national_inv,lead_time,in_transit_qty,forecast_3_month,forecast_6_month,forecast_9_month,sales_1_month,sales_3_month,sales_6_month,sales_9_month,min_bank,potential_issue,pieces_past_due,perf_6_month_avg,perf_12_month_avg,local_bo_qty,deck_risk,oe_constraint,ppap_risk,stop_auto_buy,rev_stop,went_on_backorder
+0  1026827,0,,0,0,0,0,0,0,0,0,0,No,0,-99,-99,0,No...                                                                                                                                                                                                                                                                      
+1  1043384,2,9,0,0,0,0,0,0,0,0,0,No,0,0.990,0.990...                                                                                                                                                                                                                                                                      
+2  1043696,2,,0,0,0,0,0,0,0,0,0,No,0,-99,-99,0,Ye...                                                                                                                                                                                                                                                                      
+[2022-09-26 09:35:18,550: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv successfully
+[2022-09-26 09:35:18,642: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-26 09:38:01,950: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-26 09:38:01,951: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-26 09:38:01,971: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 09:38:01,975: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-26 09:38:01,976: INFO: stage_02_data_preprocessing]: fetched the data from : artifacts\raw_local_dir\data.csv
+[2022-09-26 09:38:07,284: ERROR: stage_02_data_preprocessing]: 'potential_issue'
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'potential_issue'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 121, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 54, in main
+    print(df['potential_issue'].unique())
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'potential_issue'
+[2022-09-26 09:40:46,611: INFO: stage_02_data_preprocessing]: 
+********************
+[2022-09-26 09:40:46,616: INFO: stage_02_data_preprocessing]: >>>>> stage Data Preprocessing started <<<<<
+[2022-09-26 09:40:46,631: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 09:40:46,636: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-09-26 09:40:46,636: INFO: stage_02_data_preprocessing]: fetched the data from : artifacts\raw_local_dir\data.csv
+[2022-09-26 09:40:50,853: ERROR: stage_02_data_preprocessing]: 'potential_issue'
+Traceback (most recent call last):
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'potential_issue'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/stage_02_data_preprocessing.py", line 121, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_data_preprocessing.py", line 54, in main
+    print(df['potential_issue'].unique())
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\BackOrder-Product-Prediction\env\lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'potential_issue'
+[2022-09-26 10:45:41,379: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 10:45:41,386: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 10:45:41,386: ERROR: stage_01_load_n_save_data]: main() got an unexpected keyword argument 'params_path'
+Traceback (most recent call last):
+  File "src/stage_01_load_n_save_data.py", line 50, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+TypeError: main() got an unexpected keyword argument 'params_path'
+[2022-09-26 10:45:59,983: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 10:45:59,983: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 10:45:59,983: ERROR: stage_01_load_n_save_data]: main() got an unexpected keyword argument 'params_path'
+Traceback (most recent call last):
+  File "src/stage_01_load_n_save_data.py", line 50, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+TypeError: main() got an unexpected keyword argument 'params_path'
+[2022-09-26 10:46:32,722: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 10:46:32,722: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 10:46:32,835: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 10:47:35,681: INFO: stage_01_load_n_save_data]: Shape of the data is: (1687861, 1)
+[2022-09-26 10:47:35,682: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-26 10:47:40,032: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv
+[2022-09-26 10:47:40,084: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+
+[2022-09-26 10:57:45,159: INFO: stage_01_load_n_save_data]: 
+********************
+[2022-09-26 10:57:45,159: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data started <<<<<
+[2022-09-26 10:57:45,165: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-09-26 10:58:31,101: INFO: stage_01_load_n_save_data]: Shape of the data is: (1687861, 23)
+[2022-09-26 10:58:31,108: INFO: common]: created directory at: artifacts\raw_local_dir
+[2022-09-26 10:58:47,651: INFO: stage_01_load_n_save_data]: raw data is saved at: artifacts\raw_local_dir\data.csv
+[2022-09-26 10:58:47,718: INFO: stage_01_load_n_save_data]: >>>>> stage Get and Save Data completed!<<<<<
+

@@ -46,11 +46,12 @@ def main(config_path, params_path):
     # print("Starting experiment:", experiment.name)
     logging.info(f"fetched the data from : {raw_local_filepath}")
     df = pd.read_csv(raw_local_filepath)
-    print(df.shape)
-    row_count = (len(df))
+    logging.info(f'The shape of the dataset is: {df.shape}')
+
     # run.log('raw_rows', row_count)
     # Drop last row
     df.drop(index = 1687860,inplace=True)
+    logging.info(df['potential_issue'].unique())
     logging.info("Dropped last row")
     # Converted columns to 0's and 1's
     Cols_for_str_to_bool = ['potential_issue', 'deck_risk', 'oe_constraint', 'ppap_risk',
