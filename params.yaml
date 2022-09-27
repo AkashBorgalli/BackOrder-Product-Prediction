@@ -20,5 +20,5 @@ model_params:
   Lightgbm:
     boosting_type: goss
     objective: binary
-    n_estimators: 200
+    n_estimators: 300
 
