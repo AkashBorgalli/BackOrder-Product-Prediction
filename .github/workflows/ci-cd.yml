@@ -5,17 +5,17 @@ on: [push]
 
 jobs:
   run:
-    runs-on: [ubuntu-latest]
+    runs-on: [ubuntu-latest] ## server or container
     steps:
       - uses: actions/checkout@v2
-      - uses: iterative/setup-cml@v1
-      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1 ## setup cml
+      - uses: actions/setup-python@v2 ## setup python version
         with:
           python-version: '3.7'
 
       - name: cml-run
         env: 
-          repo_token: ${{ secrets._GITHUB_TOKEN }}
+          repo_token: ${{ secrets._GITHUB_TOKEN }} ## from developer settings
         run: |
           # Your ML wokflow commands
           pip install --upgrade pip

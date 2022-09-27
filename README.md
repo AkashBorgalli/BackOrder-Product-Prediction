@@ -66,9 +66,8 @@ Steps : 1. Dropped last record.\
 3. Removing non significant features from the dataset
 4. Replacing the constant values with NaN values
 5. Filled missing values using IterativeImputer for lead_time, perf_6_month_avg and perf_12_month_avg columns.\
-6. To handle skewness applied cuberoot for columns 'national_inv','lead_time', 'in_transit_qty' , 'forecast_6_month', 'sales_1_month', 'sales_3_month', 'sales_6_month' , 'min_bank', 'pieces_past_due', 'perf_6_month_avg', 'perf_12_month_avg', 'local_bo_qty'.\
-7. Applied Smoteenn to handle imbalanceness of target feature\
-8. Enforced Robust-Scaling on entire dataset.\
+6. Applied Smoteenn to handle imbalanceness of target feature\
+7. Enforced Standard-Scaling on entire dataset.\
 
 
 ## ✔️ Deployment

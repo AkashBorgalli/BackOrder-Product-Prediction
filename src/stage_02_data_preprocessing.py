@@ -81,13 +81,6 @@ def main(config_path, params_path):
     new_X_df =pd.DataFrame(X,columns=["national_inv","lead_time","in_transit_qty","forecast_6_month","sales_1_month","sales_3_month","sales_6_month","min_bank","potential_issue","pieces_past_due","perf_6_month_avg","perf_12_month_avg","local_bo_qty","oe_constraint","rev_stop"])
     logging.info('****After Filling missing values data *****')
     logging.info(new_X_df.head(3))
-    # Applying cuberoot for normally distributed data
-    skewed = ['national_inv','lead_time', 'in_transit_qty' , 'forecast_6_month', 'sales_1_month', 'sales_3_month', 'sales_6_month' , 'min_bank', 'pieces_past_due', 'perf_6_month_avg', 'perf_12_month_avg', 'local_bo_qty']
-    for i in skewed:
-        new_X_df[i] = np.cbrt(new_X_df[i])
-    logging.info("Applied cuberoot for normally distributed data")
-    logging.info('****After Filling missing values data *****')
-    logging.info(new_X_df.head(3))
     # Handling imbalance data
     smoteenn = SMOTEENN(n_jobs=params['base']['n_jobs'])
     print('Original dataset shape %s' % Counter(y))

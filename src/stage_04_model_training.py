@@ -7,7 +7,7 @@ from src.utils.common import read_yaml, create_directories, save_json
 import random
 import lightgbm as lgb
 import pandas as pd
-from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import StandardScaler
 ##import joblib
 import dill
 from sklearn.metrics import * 
@@ -69,11 +69,11 @@ def main(config_path, params_path):
     model_file_path = os.path.join(model_dir_path, model_name)
     logging.info("Created model directory and loaded model path")
     
-    ## Robust Scaling
-    rs = RobustScaler()
-    X_train = rs.fit_transform(X_train)
-    X_test = rs.transform(X_test)
-    logging.info("Performed Robust Scaling")
+    ## Standard Scaling
+    ss = StandardScaler()
+    X_train = ss.fit_transform(X_train)
+    X_test = ss.transform(X_test)
+    logging.info("Performed Standard Scaling")
 
     ## Model Training
     clf = lgb.LGBMClassifier(boosting_type=boosting_type,
